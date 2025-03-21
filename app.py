@@ -1,8 +1,11 @@
+import os
+os.system('chmod +x setup.sh && ./setup.sh')
+
+from sklearn.feature_extraction.text import TfidfVectorizer
 import streamlit as st
 import pandas as pd
 import re
 import string
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 
 # Load the trained model (train your model first if needed)
