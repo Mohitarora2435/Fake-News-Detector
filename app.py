@@ -1,8 +1,19 @@
+import sys
+import os
+os.system('chmod +x setup.sh && ./setup.sh')
+
+# Print Python paths to debug
+print("Python executable:", sys.executable)
+print("Python path:", sys.path)
+
+# Manually add user package directory to Python path
+sys.path.append(os.path.expanduser("~/.local/lib/python3.12/site-packages"))
+
+from sklearn.feature_extraction.text import TfidfVectorizer  # Try importing again
 import streamlit as st
 import pandas as pd
 import re
 import string
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 
 # Load the trained model (train your model first if needed)
@@ -25,7 +36,7 @@ def wordopt(text):
     return text
 
 # Streamlit UI
-st.title("Fake News Detection App")
+st.title("Fake News Detection")
 st.write("Enter a news article to check if it's **Fake** or **Real**")
 
 user_input = st.text_area("Enter News Content Here")
