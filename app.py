@@ -1,5 +1,6 @@
 import sys
 import os
+os.system('chmod +x setup.sh && ./setup.sh')
 
 # Print Python paths to debug
 print("Python executable:", sys.executable)
