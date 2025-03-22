@@ -36,7 +36,7 @@ def wordopt(text):
     return text
 
 # Streamlit UI
-st.title("Fake News Detection App")
+st.title("Fake News Detection")
 st.write("Enter a news article to check if it's **Fake** or **Real**")
 
 user_input = st.text_area("Enter News Content Here")
