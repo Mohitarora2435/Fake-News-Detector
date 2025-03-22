@@ -1,7 +1,14 @@
+import sys
 import os
-os.system('chmod +x setup.sh && ./setup.sh')
 
-from sklearn.feature_extraction.text import TfidfVectorizer
+# Print Python paths to debug
+print("Python executable:", sys.executable)
+print("Python path:", sys.path)
+
+# Manually add user package directory to Python path
+sys.path.append(os.path.expanduser("~/.local/lib/python3.12/site-packages"))
+
+from sklearn.feature_extraction.text import TfidfVectorizer  # Try importing again
 import streamlit as st
 import pandas as pd
 import re
